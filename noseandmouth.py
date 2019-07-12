@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 print(args.predictor)
 
-vs = VideoStream().start()
+vs = VideoStream(1).start()
 time.sleep(1.5)
 
 detector = dlib.get_frontal_face_detector()
