@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 print(args.predictor)
 
-vs = VideoStream(0).start()
+vs = VideoStream(3).start()
 time.sleep(1.5)
 
 detector = dlib.get_frontal_face_detector()
@@ -39,7 +39,7 @@ while True:
     cv2.imshow("eye", frame)
     key = cv2.waitKey(1) & 0xFF    
 
-    if key == ord("q" or "Q"):
+    if key == ord("q"):
         break
 cv2.destroyAllWindows()
 vs.stop()
