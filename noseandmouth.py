@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 print(args.predictor)
 
-vs = VideoStream(3).start()
+vs = VideoStream().start()
 time.sleep(1.5)
 
 detector = dlib.get_frontal_face_detector()
@@ -33,10 +33,10 @@ while True:
         shape = predictor(gray, rect)
         shape = face_utils.shape_to_np(shape)
 
-        for point in shape[28:36]:
+        for point in shape[48:68]:
             cv2.circle(frame, tuple(point), 2, (128, 255, 0))
 
-    cv2.imshow("eye", frame)
+    cv2.imshow("mouth detection ", frame)
     key = cv2.waitKey(1) & 0xFF    
 
     if key == ord("q"):
