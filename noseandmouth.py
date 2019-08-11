@@ -33,7 +33,7 @@ while True:
         shape = predictor(gray, rect)
         shape = face_utils.shape_to_np(shape)
 
-        for point in shape[28:36]:
+        for point in shape[48:68]:
             cv2.circle(frame, tuple(point), 2, (128, 255, 0))
 
     cv2.imshow("eye", frame)
